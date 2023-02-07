@@ -9,32 +9,32 @@ class ProductManager{
         this.code = code;
         this.stock = stock;
        // this.path = ProductManager.productPath(this.id);//
-        this.productos = [];
+        this.products = [];
     }
     
     listar(id){
-        let prod = this.productos.find(prod=> prod.id == id)
+        let prod = this.products.find(prod => prod.id == id)
         return prod || { error: " Producto no encontrado"}
     }
 
     listarAll(){
-        return this.productos.lenght? this.productos : {error: 'No hay productos cargados'}
+        return this.products.lenght? this.products : {error: 'No hay products cargados'}
     }
 
     guardar(prod){
-        prod.id = ++this.id
-        this.productos.push(prod)
+        prod.id = ++ this.id
+        this.products.push(prod)
     }
 
     actualizar(prod,id){
         prod.id = Number(id)
-        let index = this.productos.findIndex(prod=> prod.id ==id)
-        this.productos.splice(index,1,prod)
+        let index = this.products.findIndex(prod=> prod.id ==id)
+        this.products.splice(index,1,prod)
     }
 
     borrar(id){
-        let index = this.productos.findIndex(pord=> prod.id == id)
-        return this.productos.splice(index,1)
+        let index = this.products.findIndex(pord=> prod.id == id)
+        return this.products.splice(index,1)
     }
 
 }
